@@ -45,6 +45,7 @@ import {
   createGroupChannelFragment,
 } from '@sendbird/uikit-react-native';
 import { useGroupChannel } from '@sendbird/uikit-chat-hooks';
+import { LogLevel } from '@sendbird/chat';
 
 const GroupChannelListFragment = createGroupChannelListFragment();
 const GroupChannelCreateFragment = createGroupChannelCreateFragment();
@@ -144,7 +145,10 @@ export default function App () {
   return (
     <SendbirdUIKitContainer
       appId={'C485BAC1-EE81-4CE0-8A83-386AD3B7C719'}
-      chatOptions={{ localCacheStorage: AsyncStorage }}
+      chatOptions={{ 
+        localCacheStorage: AsyncStorage,
+        logLevel: LogLevel.DEBUG
+      }}
       platformServices={expoPlatformServices}
     >
       {/* Rest of your app */}
